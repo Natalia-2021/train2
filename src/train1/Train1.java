@@ -7,11 +7,22 @@ public class Train1 {
 
 	public static void main(String[] args)
     {
-        String arr[] = {"a","c","b","practice.geeksforgeeks.org",
-                        "quiz.geeksforgeeks.org",
-                        "code.geeksforgeeks.org"
+        String arr[] = {"a","c","b","practice",
+                        "quiz",
+                        "code"
                        };
- 
+        int n = arr.length;
+        for(int i = 0; i < n/2; i++){
+        	String arrI;
+        	arrI = arr[n - 1 - i];
+        	arr[n - 1 - i] = arr[i];
+        	arr[i] = arrI;
+        }
+        System.out.printf("Reverse sorted arr[] : \n%s\n\n",
+                Arrays.toString(arr));
+        Arrays.sort(arr, Collections.reverseOrder());
+        System.out.printf("Reverse sorted arr[] : \n%s\n\n",
+                Arrays.toString(arr));
         // Sorts arr[] in ascending order
         Arrays.sort(arr);
         System.out.printf("Modified arr[] : \n%s\n\n",
